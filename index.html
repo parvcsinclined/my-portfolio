@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praveen Sharma - Portfolio</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background-color: #12121a;
+      color: #e5e5e5;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      color: #fff;
+    }
+
+    section {
+      padding: 80px 10%;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1b1b25;
+      padding: 25px 10%;
+      border-bottom: 1px solid #2b2b3d;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      background: linear-gradient(90deg, #5c7aff, #a855f7);
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      margin-left: 25px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #8f66ff;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 100px 10%;
+    }
+
+    .hero img {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 25px rgba(150, 120, 255, 0.25);
+    }
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .hero-text h1 {
+      font-size: 65px;
+      margin-bottom: 10px;
+    }
+
+    .hero-text h1 span {
+      background: linear-gradient(90deg, #5c7aff, #a855f7);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-text p {
+      color: #c8c8d4;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      font-size: 16px;
+    }
+
+    .contact-buttons span {
+      display: inline-block;
+      background-color: transparent;
+      color: #a07bff;
+      font-size: 13px;
+      padding: 8px 14px;
+      border: 1px solid #7e5bef;
+      border-radius: 25px;
+      margin-right: 10px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .contact-buttons span:hover {
+      background-color: #7e5bef;
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    .about {
+      background-color: #171722;
+      border-radius: 20px;
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+    .about h2 {
+      background: linear-gradient(90deg, #5c7aff, #a855f7);
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #c0c0cc;
+      line-height: 1.8;
+    }
+
+    .projects {
+      text-align: center;
+    }
+
+    .projects h2 {
+      background: linear-gradient(90deg, #5c7aff, #a855f7);
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 40px;
+      font-size: 32px;
+    }
+
+    .project-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .project {
+      background-color: #232338;
+      border-radius: 15px;
+      width: 300px;
+      text-align: left;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+    }
+
+    .project img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .project h3 {
+      color: #fff;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .project p {
+      color: #ccc;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .contact {
+      text-align: center;
+      background-color: #171722;
+      border-radius: 20px;
+      padding: 80px 10%;
+    }
+
+    .contact h2 {
+      background: linear-gradient(90deg, #5c7aff, #a855f7);
+      -webkit-background-clip: text;
+      color: transparent;
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    .contact span {
+      display: inline-block;
+      background-color: transparent;
+      color: #a07bff;
+      font-size: 14px;
+      padding: 8px 14px;
+      border: 1px solid #7e5bef;
+      border-radius: 25px;
+      margin: 8px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .contact span:hover {
+      background-color: #7e5bef;
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      background-color: #101018;
+      text-align: center;
+      padding: 25px 10%;
+      color: #888;
+      font-size: 13px;
+      border-top: 1px solid #2b2b3d;
+    }
+
+    footer a {
+      color: #a07bff;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 850px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text {
+        margin-top: 20px;
+      }
+
+      .project-list {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">Praveen.</div>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="hero">
+    <img src="mypic.jpeg" alt="Profile Photo">
+    <div class="hero-text">
+      <h1>Hi There<span>!</span></h1>
+      <p>I'm <b>Praveen Sharma</b>, a designer who codes and a coder who designs. 
+        I'm on an exciting journey exploring front-end development, turning creative ideas into interactive digital experiences. Let's connect and create something amazing together!</p>
+
+      <div class="contact-buttons">
+        <span onclick="window.open('https://github.com/parvcsinclined', '_blank')">GitHub</span>
+        <span onclick="window.open('https://www.instagram.com/praveen_sharma269?igsh=MTg2djczNjBxM3RwMw==', '_blank')">Instagram</span>
+        <span onclick="window.open('https://www.linkedin.com/in/praveen-sharma-974194377?utm_source=share_via&utm_content=profile&utm_medium=member_android', '_blank')">LinkedIn</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About Me</h2>
+    <p>I'm driven by curiosity and a love for learning new things every day. Front-end development has become my playground where design meets functionality. I thrive on meeting new people, exchanging ideas, and collaborating on projects that push creative boundaries. Every conversation is an opportunity to learn, and every project is a chance to grow.</p>
+  </section>
+
+  <section class="projects" id="projects">
+    <h2>Featured Projects</h2>
+    <div class="project-list">
+      <div class="project">
+        <img src="project1.jpg" alt="Project 1">
+        <h3>Budget Manager App</h3>
+        <p>Designed and developed an intuitive budget tracking application with interactive charts, expense categories, and real-time calculations.</p>
+      </div>
+
+      <div class="project">
+        <img src="project2.jpg" alt="Project 2">
+        <h3>Portfolio Website</h3>
+        <p>Built a clean, interactive portfolio showcasing creative work with custom CSS animations and mobile-first design approach.</p>
+      </div>
+
+      <div class="project">
+        <img src="project3.jpg" alt="Project 3">
+        <h3>Weather Dashboard</h3>
+        <p>Created a dynamic weather application with real-time data integration, featuring sleek UI and responsive design elements.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <p style="color:#bbb;">Let's collaborate and bring your ideas to life!</p>
+    <div>
+      <span onclick="window.location.href='mailto:parvcsinclined@gmail.com'">parvcsinclined@gmail.com</span>
+      <span onclick="window.open('https://github.com/parvcsinclined', '_blank')">GitHub</span>
+      <span onclick="window.open('https://www.instagram.com/praveen_sharma269?igsh=MTg2djczNjBxM3RwMw==', '_blank')">Instagram</span>
+      <span onclick="window.open('https://www.linkedin.com/in/praveen-sharma-974194377?utm_source=share_via&utm_content=profile&utm_medium=member_android', '_blank')">LinkedIn</span>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Praveen Sharma. Crafted with 💜 | 
+    <a href="#hero">Back to top</a>
+  </footer>
+
+</body>
+
+</html>
